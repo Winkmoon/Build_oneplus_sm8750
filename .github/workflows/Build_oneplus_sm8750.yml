@@ -357,7 +357,7 @@ jobs:
         run: |
           cd kernel_workspace
           echo "CONFIG_KSU=y" >> ./common/arch/arm64/configs/gki_defconfig
-          echo "CONFIG_KPM=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_KPM=n" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_CRYPTO_LZ4=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_CRYPTO_LZ4HC=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_CRYPTO_LZ4KD=y" >> ./common/arch/arm64/configs/gki_defconfig
@@ -526,7 +526,7 @@ jobs:
           cd AnyKernel3
           rm -rf .git
           cp ../common/out/arch/arm64/boot/Image ./Image
-          zip -r ./AK3_oneplus13_XinRan_6.6_SukiSU.zip ./*
+          zip -r ../AK3_oneplus13_XinRan_6.6_SukiSU.zip ./*
           # （可选）如果需要替换内核镜像/配置文件，按你的需求添加复制命令
           # 示例：cp "${GITHUB_WORKSPACE}/你的内核镜像路径" ./Image
           # 示例：cp "${GITHUB_WORKSPACE}/你的配置文件" ./anykernel.sh
@@ -535,5 +535,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
          name: AK3_oneplus13_XinRan_6.6_SukiSU
-         path: ./Anykernel3/*.zip
+         path: ./kernel_workspace/AK3_oneplus13_XinRan_6.6_SukiSU.zip
          if-no-files-found: error
