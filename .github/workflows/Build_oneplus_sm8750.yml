@@ -523,7 +523,7 @@ jobs:
         run: |
           cd kernel_workspace
           git clone https://github.com/Winkmoon/AnyKernel3 --depth=1
-          cd Anykernel3
+          cd AnyKernel3
           rm -rf .git
           cp ../common/out/arch/arm64/boot/Image ./Image
           zip -r ./AK3_oneplus13_XinRan_6.6_SukiSU.zip ./*
