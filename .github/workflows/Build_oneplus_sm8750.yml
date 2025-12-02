@@ -534,6 +534,6 @@ jobs:
       - name: 上传 Anykernel3
         uses: actions/upload-artifact@v4
         with:
-        name: AK3_oneplus13_XinRan_6.6_SukiSU
-        path: ./Anykernel3/*.zip
-        if-no-files-found: error
+         name: AK3_oneplus13_XinRan_6.6_SukiSU
+         path: ./Anykernel3/*.zip
+         if-no-files-found: error
